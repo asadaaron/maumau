@@ -9,11 +9,13 @@ public class Deck {
     public Deck() {
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
         String[] ranks = {"7", "8", "9", "10", "J", "Q", "K", "A"};
+        Integer[] value = {0, 0, 0, 10, 2, 3, 4, 11};
         cards = new ArrayList<>();
 
         for (String suit : suits) {
+            int i = 0;
             for (String rank : ranks) {
-                cards.add(new Card(suit, rank));
+                cards.add(new Card(suit, rank, value[i++]));
             }
         }
         shuffle();

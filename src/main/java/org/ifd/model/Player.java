@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private ArrayList<Card> hand;
     private boolean isComputer;
+    private Integer points;
 
     public Player(String name, boolean isComputer) {
         this.name = name;
@@ -55,6 +56,15 @@ public class Player {
             }
         }
         return null;
+    }
+
+    /**
+     * used to calculate the total points of the player
+     * @param cards
+     * @return points
+     */
+    public Integer getPoints(ArrayList<Card> cards){
+        return Math.toIntExact(cards.stream().map(Card::getValue).count());
     }
 }
 
