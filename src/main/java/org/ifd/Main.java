@@ -1,7 +1,10 @@
 package org.ifd;
 
+import org.ifd.service.MauMauGame;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MauMauGame game = new MauMauGame(3); // Three-player game
+        game.start();
     }
 }
